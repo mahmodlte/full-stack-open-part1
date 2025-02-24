@@ -1,5 +1,6 @@
 import Content from "./Content";
 import Header from "./Header";
+import Total from "./Total";
 
 function App() {
   const course = "Half Stack application development";
@@ -21,6 +22,7 @@ function App() {
         part3={part3}
         exercises3={exercises3}
       />
+      <Total totalExercises={exercises1 + exercises2 + exercises3} />
     </div>
   );
 }
