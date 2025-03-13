@@ -18,13 +18,14 @@ function App() {
       exercises: 14,
     },
   ];
-  // const totalExercises = part1.exercises + part2.exercises + part3.exercises;
+  const totalExercises =
+    parts[0].exercises + parts[1].exercises + parts[2].exercises;
 
   return (
     <div>
       <Header course={course} />
       <Content parts={parts} />
-      {/* <Total totalExercises={totalExercises} /> */}
+      <Total totalExercises={totalExercises} />
     </div>
   );
 }
