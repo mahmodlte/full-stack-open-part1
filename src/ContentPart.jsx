@@ -1,8 +1,13 @@
 const ContentPart = (props) => {
+  const partName = props?.part?.name;
+  const exerciseNumber = props?.part?.exercises;
+  console.log(partName);
+
   return (
     <>
       <p>
-        {props.part.name} {props.part.exercises}
+        {" "}
+        {partName} {exerciseNumber}
       </p>
     </>
   );
