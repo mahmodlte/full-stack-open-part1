@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "./Button";
+import Statistics from "./Statistics";
 function App() {
   const [good, setGood] = useState(0);
   const [bad, setBad] = useState(0);
@@ -8,11 +9,6 @@ function App() {
   const handleBad = () => setBad(bad + 1);
   const handleNatural = () => setNatural(natural + 1);
 
-  const getPostiveFeedback = () => {
-    const totalFeedback = good + bad + natural;
-    const postiveFeedback = good / totalFeedback;
-    return postiveFeedback * 100;
-  };
   return (
     <>
       <div>
@@ -21,17 +17,7 @@ function App() {
 
         <Button text="Natural" onClick={handleNatural} />
         <Button text={"Bad"} onClick={handleBad} />
-        <h1>Statistics</h1>
-        <p>Good: {good}</p>
-        <p>Natural: {natural}</p>
-        <p>Bad: {bad}</p>
-        <p>All: {good + natural + bad}</p>
-        <p>Average: {(good + bad + natural) / 3}</p>
-        <p>
-          Postive:
-          {getPostiveFeedback() ? getPostiveFeedback() : "There is no Feedback"}
-          %
-        </p>
+        <Statistics good={good} bad={bad} natural={natural} />
       </div>
     </>
   );
