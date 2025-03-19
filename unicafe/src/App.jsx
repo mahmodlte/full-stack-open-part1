@@ -7,6 +7,12 @@ function App() {
   const handleGood = () => setGood(good + 1);
   const handleBad = () => setBad(bad + 1);
   const handleNatural = () => setNatural(natural + 1);
+
+  const getPostiveFeedback = () => {
+    const totalFeedback = good + bad + natural;
+    const postiveFeedback = good / totalFeedback;
+    return postiveFeedback * 100;
+  };
   return (
     <>
       <div>
@@ -19,6 +25,13 @@ function App() {
         <p>Good: {good}</p>
         <p>Natural: {natural}</p>
         <p>Bad: {bad}</p>
+        <p>All: {good + natural + bad}</p>
+        <p>Average: {(good + bad + natural) / 3}</p>
+        <p>
+          Postive:
+          {getPostiveFeedback() ? getPostiveFeedback() : "There is no Feedback"}
+          %
+        </p>
       </div>
     </>
   );
