@@ -1,6 +1,4 @@
 const StatisticLine = ({ statisticData }) => {
-  console.log(statisticData);
-
   return (
     <div>
       <table>
