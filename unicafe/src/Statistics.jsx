@@ -8,17 +8,34 @@ const Statistics = ({ good, bad, natural }) => {
   };
   const totalNumber = good + natural + bad;
   const averageNumber = (good + bad + natural) / 3;
+  const feedbackData = {
+    good: {
+      text: "Good",
+      value: good,
+    },
+    bad: {
+      text: "Bad",
+      value: bad,
+    },
+    natural: {
+      text: "Natural",
+      value: natural,
+    },
+    total: {
+      text: "All",
+      value: totalNumber,
+    },
+    average: {
+      text: "Average",
+      value: averageNumber,
+    },
+  };
   return (
     <>
       {good || bad || natural ? (
         <div>
-          {" "}
           <h1>Statistics</h1>
-          <StatisticLine text={"Good"} value={good} />
-          <StatisticLine text={"Bad"} value={bad} />
-          <StatisticLine text={"Natural"} value={natural} />
-          <StatisticLine text={"All"} value={totalNumber} />
-          <StatisticLine text={"Average"} value={averageNumber} />
+          <StatisticLine statisticData={feedbackData} />
           <p>
             Postive:
             {getPostiveFeedback()
